@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Research_Lab.Models.ResearchLab>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAuthorizedamin.cshtml";
+}
+
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LabName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LabLoction)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LabAssistantNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LabName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LabLoction)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LabAssistantNavigation.Email)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Rlid">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Rlid">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Rlid">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

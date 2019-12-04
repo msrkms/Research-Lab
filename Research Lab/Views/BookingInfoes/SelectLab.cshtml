@@ -1,0 +1,24 @@
+﻿@model Research_Lab.Models.ResearchLab
+@{
+    ViewData["Title"] = "SelectLab";
+    Layout = "~/Views/Shared/_LayoutAuthorized.cshtml";
+}
+
+<h1>SelectLab</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="SelectLab">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="LabName" class="control-label">Lab Name</label>
+                <select asp-for="Rlid" class="form-control" asp-items="ViewBag.Rlid"></select>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="SelectLab" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+

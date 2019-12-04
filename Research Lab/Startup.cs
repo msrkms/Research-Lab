@@ -27,7 +27,7 @@ namespace Research_Lab
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddDbContext<MyDBContext>(options =>
+            services.AddDbContext<ResearchLabContext>(options =>
            options.UseSqlServer(
                Configuration.GetConnectionString("DefaultConnection")));
 

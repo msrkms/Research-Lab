@@ -1,0 +1,37 @@
+﻿@model Research_Lab.Models.ResearchLab
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_LayoutAuthorizedamin.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ResearchLab</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LabName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LabName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LabLoction)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LabLoction)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LabAssistantNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LabAssistantNavigation.Email)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Rlid">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

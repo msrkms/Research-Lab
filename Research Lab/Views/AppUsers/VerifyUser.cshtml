@@ -1,0 +1,32 @@
+﻿@model Research_Lab.Models.AppUser
+
+@{
+    ViewData["Title"] = "View";
+    Layout = "~/Views/Shared/_LayoutAuthorizedamin.cshtml";
+}
+
+
+<h4>Verify User</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="VerifyUser">          
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <select asp-for="AppUserId" class ="form-control" asp-items="ViewBag.User"></select>
+            </div>
+ 
+            <div class="form-group">
+                <input type="submit" value="VerifyUser" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

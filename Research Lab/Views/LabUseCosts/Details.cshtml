@@ -1,0 +1,55 @@
+﻿@model Research_Lab.Models.LabUseCost
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_LayoutAuthorizedLab.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>LabUseCost</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UseDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UseDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.hour)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.hour)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.minute)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.minute)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.totalCost)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.totalCost)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.appUser)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.appUser.AppUserId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Computer)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Computer.Cid)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Research_Lab.Data;
 using Research_Lab.Models;
 
 namespace Research_Lab.Controllers
@@ -12,13 +13,14 @@ namespace Research_Lab.Controllers
     {
         public IActionResult Index()
         {
+            if (DataHolder.appUser != null)
+            {
+                return RedirectToAction("Index", "AppUsers");
+            }
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+        
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

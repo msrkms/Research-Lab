@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Research_Lab.Models.BookingInfo>
+
+@{
+    ViewData["Title"] = "MyBooking";
+    Layout = "~/Views/Shared/_LayoutAuthorized.cshtml";
+}
+
+<h1>My Booking</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BookingDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookingStartTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookingEndTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.C.Lab.LabName)
+            </th>
+            <th>
+                Computer
+            </th>
+           
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookingStartTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookingEndTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.C.Lab.LabName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cid)
+            </td>
+
+        </tr>
+}
+    </tbody>
+</table>

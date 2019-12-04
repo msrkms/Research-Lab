@@ -1,0 +1,58 @@
+﻿@model Research_Lab.Models.AppUser
+
+@{
+    ViewData["Title"] = "Profile";
+    Layout = "~/Views/Shared/_LayoutAuthorizedamin.cshtml";
+}
+
+
+<div>
+    <h4 class="text-center">Wellcome</h4>
+    <hr />
+</div>
+<div>
+
+
+    <div class="login-form">
+        <form asp-action="AddLabAssistant">
+            <h2 class="text-center">Add Lab Assistant</h2>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label"></label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <input class="form-check-input" asp-for="RoleId" value="3" hidden />
+
+            <input class="form-check-input" asp-for="IsVerified" value="1" hidden />
+
+
+            <div class="form-group">
+                <input type="submit" value="AddLabAssistant" class="btn btn-primary" />
+            </div>
+        </form>
+
+        <p class="text-center"><a asp-controller="AppUsers" asp-action="ShowAllLabAssistant">Show all lab asistant</a></p>
+    </div>
+
+
+
+</div>

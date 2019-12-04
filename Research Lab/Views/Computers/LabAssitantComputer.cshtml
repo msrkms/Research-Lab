@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Research_Lab.Models.Computer>
+
+@{
+    ViewData["Title"] = "Computer Available";
+    Layout = "~/Views/Shared/_LayoutAuthorizedLab.cshtml";
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IsAvailable)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lab.LabName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsAvailable)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lab.LabName)
+            </td>
+            <td>
+                <a asp-action="EditbyLabAsistant" asp-route-id="@item.Cid">Edit</a> |
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

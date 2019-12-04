@@ -29,10 +29,23 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="AppUsers" asp-action="Index">Login</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="BookingInfoes" asp-action="ShowAvailableComputers">Check Available Conmputer</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="BookingInfoes" asp-action="BookAComputer">Book a Conmputer</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="BookingInfoes" asp-action="MyBooking">My Booking History</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="LabUseCosts" asp-action="MyBill">My Bill</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="AppUsers" asp-action="Logout">Logout</a>
                         </li>
                     </ul>
                 </div>
+                
             </div>
         </nav>
     </header>

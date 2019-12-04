@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Research_Lab.Models.LabUseCost>
+
+@{
+    ViewData["Title"] = "MyBill";
+    Layout = "~/Views/Shared/_LayoutAuthorized.cshtml";
+}
+
+<h1>MyBill</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UseDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hour)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.minute)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.totalCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.appUser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Computer)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UseDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hour)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.minute)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.totalCost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.appUser.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Computer.Cid)
+            </td>
+            
+        </tr>
+}
+    </tbody>
+</table>
